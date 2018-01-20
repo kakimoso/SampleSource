@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 /**
  * <p>入力したディレクトリ以下全ファイルの拡張子を.txtにする恐ろしいプログラム</p>
  * <p>本当にガチでマジであぶない</p>
+ * <p>いまは入力パスの一個下のディレクトリ内までしか見ない</p>
  */
 public class FileEditor {
 	
@@ -44,6 +45,7 @@ public class FileEditor {
 		// 初期ディレクトリにあるファイルの拡張子を変更する
 		changeExtension(fileList);
 		
+		// 初期ディレクトリ内のフォルダ内のファイルの拡張子を変更する
 		for(File file: directoryList) {
 			File[] tempFileList = file.listFiles();
 			changeExtension(tempFileList);
