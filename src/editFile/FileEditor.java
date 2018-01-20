@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
  */
 public class FileEditor {
 	
-	// 変えるときは本当に慎重にね。変えないで済むように使おうね。
-	private static final String PATH = "C:\\Users\\kimos\\Desktop\\sacrifice\\";
+	// ここに深い階層のパスを入れとく
+	private static final String PATH = "";
 	
 	public static void main(String[] args) {
 		
@@ -30,7 +30,7 @@ public class FileEditor {
 		}
 		
 		// ファイルを扱うのはFileクラス。File（String path）でパスをしていするとそいつを扱えるFileインスタンスができる
-		File directory = new File(PATH + "\\util - コピー");
+		File directory = new File(PATH + "");
 		// Fileクラスのインスタンスメソッド listFiles は、そのインスタンスがもつ全ファイルをFileインスタンスとして配列に格納する
 		File[] fileList = directory.listFiles();
 		// ディレクトリのリストをつくる
