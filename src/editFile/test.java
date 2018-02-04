@@ -20,8 +20,8 @@ public class test {
 		Scanner scanner = new Scanner(System.in);
 
 		try {
-			File inputFile = new File("C:\\Users\\user\\Desktop\\sacrifice\\util3\\AbstractCollection.txt");
-			File outputDirectory = new File("C:\\Users\\user\\Desktop\\sacrifice\\util3\\output");
+			File inputFile = new File("");
+			File outputDirectory = new File("");
 			File outputFile = null;
 			boolean directoryExistsFlg = false;
 			
