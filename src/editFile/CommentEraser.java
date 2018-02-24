@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class CommentEraser {
 
 	// デフォルトの起点パス
-	private static String PATH = "";
+	private static String PATH = "C:\\Users\\kimos\\Desktop\\sacrifice\\";
 	// 出力パス
 	private static String OUTPUT_PATH = "";
 	// 処理対象
@@ -93,7 +93,7 @@ public class CommentEraser {
 		while (true) {
 			messageFrame("入力待機中");
 			changeInput = scanner.nextLine();
-			if (changeInput != null && changeInput.isEmpty()) {
+			if (changeInput != null && !changeInput.isEmpty()) {
 				if (changeInput.equals("y")) {
 					extensionChangeFlg = true;
 					break;
@@ -162,6 +162,8 @@ public class CommentEraser {
 				messageFrame("入力してください");
 			}
 		}
+		
+		messageFrame("処理完了しました。");
 	}
 
 	/**
@@ -183,7 +185,7 @@ public class CommentEraser {
 				try {
 					// ファイル入出力の用意
 					BufferedReader br = new BufferedReader(new FileReader(file));
-					BufferedWriter bw = new BufferedWriter(new FileWriter(OUTPUT_PATH + file.getName()));
+					BufferedWriter bw = new BufferedWriter(new FileWriter(OUTPUT_PATH + "\\" + file.getName()));
 
 					// その行の出力を飛ばすフラグ
 					boolean skipFlg = false;
@@ -201,7 +203,6 @@ public class CommentEraser {
 
 						// skipFlgがfalseなら出力する
 						if (!skipFlg) {
-							System.out.println(content);
 							bw.write(content);
 							bw.newLine();
 						}
@@ -231,6 +232,6 @@ public class CommentEraser {
 	 *            表示するメッセージ
 	 */
 	private static void messageFrame(String message) {
-		System.out.println("[CommentEditor] : " + message);
+		System.out.println("[CommentEraser] : " + message);
 	}
 }
